@@ -1,8 +1,15 @@
-body {
+/* Global Reset */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Arial', sans-serif;
-    background: #0d0d0d;
+    background-color: #0d0d0d;
     color: #fff;
+    line-height: 1.6;
 }
 
 /* Header */
@@ -39,7 +46,7 @@ nav a:hover {
     color: #ff0066;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('dj-background.jpg') center/cover no-repeat;
@@ -84,25 +91,35 @@ nav a:hover {
     background: #1ebe5d;
 }
 
-/* Sections */
-section {
+/* Section "À propos" */
+#about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 100px 20px;
     max-width: 900px;
     margin: auto;
+    text-align: left;
 }
 
-section h2 {
-    margin-bottom: 20px;
-    text-align: center;
+.about-content {
+    max-width: 600px;
 }
 
-section a {
-    color: #ff0066;
-    text-decoration: none;
+.about-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-right: 30px;
 }
 
-section a:hover {
-    text-decoration: underline;
+/* Section "Informations" */
+#info {
+    padding: 100px 20px;
+    max-width: 900px;
+    margin: auto;
+    text-align: left;
 }
 
 /* Animation fade-in */
@@ -124,27 +141,115 @@ footer {
     background: rgba(0, 0, 0, 0.9);
 }
 
-/* Responsive Mobile */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        padding: 10px;
-        display: none;
-    }
+/* Media Queries pour Responsivité */
 
-    nav ul.active {
-        display: flex;
-    }
-
+/* Tablette */
+@media (max-width: 1024px) {
     .hero h1 {
         font-size: 2.5em;
     }
 
     .hero p {
+        font-size: 1.3em;
+    }
+
+    .hero .location {
+        font-size: 1.1em;
+    }
+
+    #about {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .about-image {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .whatsapp-button {
+        font-size: 1.1em;
+        padding: 10px 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
         font-size: 1.2em;
+    }
+
+    .hero .location {
+        font-size: 1.1em;
+    }
+
+    .whatsapp-button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    #about {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .about-image {
+        width: 70%;
+        margin-bottom: 20px;
+    }
+
+    #info {
+        padding: 50px 20px;
+    }
+
+    footer {
+        font-size: 0.9em;
+        padding: 15px;
+    }
+}
+
+/* Petit Mobile */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .whatsapp-button {
+        font-size: 1em;
+        padding: 8px 12px;
+    }
+
+    .about-image {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .about-content {
+        font-size: 0.9em;
+    }
+
+    footer {
+        font-size: 0.8em;
+        padding: 12px;
     }
 }
